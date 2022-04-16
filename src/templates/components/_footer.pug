@@ -1,0 +1,66 @@
+mixin footer(data)
+	-
+		const defaultData = {
+			navItems: [
+				{
+					title: 'Privacy',
+					href: '#',
+				},
+				{
+					title: 'Payment',
+					href: '#',
+				},
+				{
+					title: 'Online courses',
+					href: '#',
+				},
+				{
+					title: 'Login',
+					href: '#',
+				},
+			],
+			socItems: [
+				{
+					icon: 'whatsapp',
+					title: 'whatsapp',
+					href: '#',
+				},
+				{
+					icon: 'vk',
+					title: 'vkontakte',
+					href: '#',
+					mod: 'big',
+				},
+				{
+					icon: 'instagram-filled',
+					title: 'instagram',
+					href: '#',
+				},
+				{
+					icon: 'telegram',
+					title: 'telegram',
+					href: '#',
+					mod: 'big',
+				},
+			]
+		}
+		data = Object.assign(defaultData, data);
+		const { navItems, socItems } = data;
+
+	footer(block="footer")
+		.container.text-center
+			nav(elem="nav")
+				ul.row.justify-content-center.flex-column.flex-md-row(elem="nav-list")
+					each item in navItems
+						li.col-auto(elem="nav-item")
+							a(elem="nav-link" href=item.href) #{item.title}
+
+			.d-flex.justify-content-center.mb-3(elem="logo" title="Leily yoga")
+				+svg('logo-footer')
+			div.mb-2(elem="rights") All rights reserved
+
+			div(block="soc-links")
+				div(elem="list")
+					each soc in socItems
+						a(elem="item" mod=soc.mod href=soc.href title=soc.title)
+							+svg(soc.icon)

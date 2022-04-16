@@ -1,0 +1,82 @@
+html {
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: $font-primary;
+  color: $color-gray;
+
+  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+main, section, header, footer, picture {
+  display: block;
+}
+
+.wrap-site {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+
+  min-height: 100%;
+  min-width: 360px;
+  width: 100%;
+
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+
+  @media (min-width: 375px) {
+    overflow: visible;
+  }
+}
+
+.main{
+  position: relative;
+  flex: 1 0 auto;
+}
+
+.container-fluid ,
+.container {
+  padding-left: $container-padding-xs;
+  padding-right: $container-padding-xs;
+
+  @include media-breakpoint-up(md) {
+    padding-left: $container-padding-md;
+    padding-right: $container-padding-md;
+  }
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.fit {
+  &-contain {
+    object-fit: contain
+  }
+
+  &-cover {
+    object-fit: cover;
+  }
+
+  &-scale-down {
+    object-fit: scale-down;
+  }
+
+  &-none {
+    object-fit: none;
+  }
+}

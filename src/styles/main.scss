@@ -1,0 +1,32 @@
+@import 'vars';
+@import 'mixins/index';
+
+@import "libs/bootstrap-grid";
+@import "libs/photoswipe";
+@import "libs/aos";
+
+@import 'fonts';
+@import 'typography';
+@import 'base';
+
+// simple components
+@import 'components/button';
+@import 'components/responsive-media';
+
+
+// complex components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/soc-links';
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/advantages';
+@import 'components/greet';
+@import 'components/courses';
+@import 'components/reviews';
+@import 'components/faq';
+@import 'components/hashtags';
+@import 'components/gallery';
+
+
+@import 'animations';

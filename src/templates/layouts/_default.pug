@@ -1,0 +1,30 @@
+-
+	const href = 'javascript:void(0)';
+	const img = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+	const DATE = new Date();
+	const time = DATE.getTime();
+
+block vars
+
+include ../components/_br.pug
+include ../components/_svg.pug
+include ../components/_header.pug
+include ../components/_footer.pug
+
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Tempalte less
+		include ../blocks/_favicon.pug
+		link(rel='stylesheet' href=`css/main.css`)
+
+	body
+		.wrap-site
+			+header
+			main.main
+				block content
+			+footer
+
+		script(src='js/main.js')

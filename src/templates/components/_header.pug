@@ -1,0 +1,13 @@
+include _nav.pug
+
+mixin header
+	header(block="header" mod="absolute")&attributes(attributes)
+		.container
+			.row
+
+				.col-md-auto.order-md-1
+					+nav
+
+				.col-md.text-center.text-md-left
+					.d-inline-block(elem="logo" title="Leily yoga")
+						+svg('logo-cosmo').d-block

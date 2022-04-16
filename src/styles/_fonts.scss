@@ -1,0 +1,29 @@
+@mixin font-urls($name, $dir: '', $path: $font-path) {
+  // src: url($path + $dir + $name +'.eot');
+  src: url($path+$dir+$name+'.woff2') format('woff2'),
+    url($path+$dir+$name+'.woff') format('woff')
+    // ,url($path + $dir + $name +'.ttf') format('ttf')
+    // ,url($path + $dir + $name +'.svg#'+ $name) format('svg')
+    // ,url($path + $dir + $name +'.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  @include font-urls('Stolzl-Regular');
+  font-family: $font-primary-name;
+  font-weight: $fw-regular;
+  font-style: normal;
+}
+
+@font-face {
+  @include font-urls('RFDewi-Semibold');
+  font-family: $font-secondary-name;
+  font-weight: $fw-semibold;
+  font-style: normal;
+}
+
+@font-face {
+  @include font-urls('RFDewi-Bold');
+  font-family: $font-secondary-name;
+  font-weight: $fw-bold;
+  font-style: normal;
+}

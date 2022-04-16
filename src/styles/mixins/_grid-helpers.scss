@@ -1,0 +1,12 @@
+
+@mixin make-col-grow() {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+@mixin make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}

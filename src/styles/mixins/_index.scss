@@ -1,0 +1,12 @@
+@import 'breakpoints';
+@import 'functions';
+@import 'placeholder-style';
+@import 'grid-helpers';
+
+
+@mixin link-clicker() {
+	cursor: pointer;
+	&:active{
+		transform: translateY(1px);
+	}
+}

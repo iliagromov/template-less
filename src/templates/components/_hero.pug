@@ -1,0 +1,34 @@
+mixin hero(data)
+	-
+		const defaultData = {
+			title: 'Online yoga &&mdash;meditation courses',
+			descr: 'Create the cosmos inside',
+			btn: {
+				text: 'Select your course',
+				href: '#courses',
+				smoothScroll: true,
+			},
+			img: {
+				mobile: 'img/hero-img-xs.png',
+				tablet: 'img/hero-img-md.png',
+				desktop: 'img/hero-img-lg.png',
+			}
+		}
+		data = Object.assign(defaultData, data);
+		const { title, descr, img, btn } = data;
+
+	section(block="hero")
+		picture.responsive-media(elem="img")
+			source(data-srcset=`${img.desktop}` media="(min-width: 920px)")
+			source(data-srcset=`${img.tablet}` media="(min-width: 768px)")
+			source(data-srcset=`${img.mobile}`)
+			img.lazyload(data-src=img.desktop, alt="")
+
+		.container
+			.row
+				.col-md-6.col-lg-5.d-flex.align-items-center(elem="content")
+					div(elem="content-inner" data-aos="hero-content-animation")
+						div(elem="title") !{title}
+						div(elem="descr") !{descr}
+						div(elem="btn-wrap")
+							a(block="btn" mod="light" href=btn.href data-scroll=btn.smoothScroll) #{btn.text}
